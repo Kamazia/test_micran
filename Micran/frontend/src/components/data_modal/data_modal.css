@@ -1,0 +1,37 @@
+.Cancel{
+    float: right;
+    grid-column-start: 3;
+    grid-column-end: 4;
+    font-size: 15px;
+    
+  }
+  
+  .Ok{
+    font-size: 15px;
+  }
+
+  .Button button{
+    border: none;
+    background-color: rgb(230, 228, 228);
+    color: black;
+  }
+  
+  .Button button:hover{
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  }
+  
+  
+  .Button{
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  
+  .Button_left{
+    display: grid;
+    width:70%;
+    gap: 10px;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr;
+    font-size: 20px;
+  }

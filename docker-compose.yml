@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+  backend:
+    build:
+      context: ./Micran
+    command: sh -c "python manage.py migrate &&
+                    source create_superuser_prod.sh &&
+                    python manage.py runserver 0.0.0.0:8000"
+    ports:
+      - 8000:8000
+    depends_on:
+      - db
+
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: '1234'
+      POSTGRES_USER: postgres
+      POSTGRES_DB: micrandb
+      PGDATA: /postgres/data
+      POSTGRES_INITDB_ARGS: "-A md5"

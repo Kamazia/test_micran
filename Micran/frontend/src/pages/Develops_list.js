@@ -6,13 +6,12 @@ const useSkipFirstRender = (fn, args) => {
   const isMounted = useRef(0);
 
   useEffect(() => {
-    if (isMounted.current > 1) {
+    if (isMounted.current >= 1) {
       return fn();
-    } else if (isMounted.current <= 1){
+    } else if (isMounted.current < 1){
       isMounted.current += 1
     }
   }, args)
-
 }
 
 

@@ -4,8 +4,9 @@ services:
   backend:
     build:
       context: ./Micran
-    command: sh -c "python manage.py migrate &&
-                    source create_superuser_prod.sh &&
+    command: sh -c "sleep 8 &&
+                    python manage.py migrate &&
+                    source create_superuser.sh &&
                     python manage.py runserver 0.0.0.0:8000"
     ports:
       - 8000:8000
